@@ -5,8 +5,22 @@ import numpy as np
 import pandas as pd
 from src.exception import CustomException
 from src.logger import logging
-
+from bs4 import BeautifulSoup
 class Preprocessing():
+
+    def DataSetModifying(self,data_input):
+        try:
+            #print(data_input.head())
+            logging.info("data set modifying initiated")
+            #print(data_input['Language'].value_counts())
+            data_input['Language_N'] = data_input['Language'].apply(lambda x: '1' if x == 'Italian'           else '0')
+            #print(data_input['Language_N'].value_counts())
+            data_input.drop(columns =['Language'])
+            print(data_input.head(5))
+        except:
+            pass
+
+
     punctuation = ["\'", "$", "-", "+", "#", ">", "{", "}", "_", "*", "`", "\\", ":", ";", "!", ",", ".", "...", "..",
                    "?", "....", ")", "(", "-"]
 
@@ -50,8 +64,17 @@ class Preprocessing():
             raise CustomException(e,sys)
 
 
-    def RemoveHTMLElements(data_input):
+    def RemoveHTMLElements(self,data_input):
         try:
-            pass
+            logging.info("removing HTML tags initiated")
+            for i in range(len(data_input)):
+                currentPhase = data_input['Text'].values[i]
+                #currentPhase=currentPhase.apply(str)
+                #print(currentPhase)
+                #currentPhase= re.sub('[^a-zA-Z]', '', str(currentPhase))
+                #data_input['Text'].values[i]=BeautifulSoup(currentPhase,"html.parser").get_text()
+                #data_input['Text'].values[i] = BeautifulSoup(currentPhase, "html.parser").get_text()
+            return data_input
         except Exception as e :
             raise CustomException(e, sys)
+

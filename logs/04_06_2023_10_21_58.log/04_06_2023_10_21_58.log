@@ -1,0 +1,5 @@
+[ 2023-04-06 10:22:01,083 ] 15 root - INFO - reading data completed
+[ 2023-04-06 10:22:01,083 ] 27 root - INFO - data is ingested
+[ 2023-04-06 10:22:01,083 ] 15 root - INFO - removing non alpha characters initiated
+[ 2023-04-06 10:22:02,405 ] 45 root - INFO - removing non alpha characters completed
+[ 2023-04-06 10:22:02,406 ] 55 root - INFO - removing HTML tags initiated

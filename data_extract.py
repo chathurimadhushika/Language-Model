@@ -25,7 +25,14 @@ if __name__ == "__main__":
     #Extraction of data
     data_input= obj.data_extract()
     logging.info("data is ingested")
-    #Preprocessing of data
+    #modifying data
     obj_preprocessor = Preprocessing()
-    data_preprocessed = obj_preprocessor.RemoveNonAlphaCharacters(data_input)
-    print(data_preprocessed)
+    df_modified = obj_preprocessor.DataSetModifying(data_input)
+
+    #Preprocessing of data
+
+
+
+    #data_preprocessed = obj_preprocessor.RemoveNonAlphaCharacters(data_input)
+    #data_preprocessed2 = obj_preprocessor.RemoveHTMLElements(data_preprocessed)
+    #print(data_preprocessed.head(1000))
