@@ -1,0 +1,5 @@
+[ 2023-04-11 16:55:53,905 ] 22 root - INFO - reading data completed
+[ 2023-04-11 16:55:53,905 ] 34 root - INFO - data is ingested
+[ 2023-04-11 16:55:53,905 ] 74 root - INFO - data set modifying initiated
+[ 2023-04-11 16:55:53,910 ] 18 root - INFO - removing non alpha characters initiated
+[ 2023-04-11 16:55:56,024 ] 48 root - INFO - removing non alpha characters completed

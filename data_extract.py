@@ -47,5 +47,6 @@ if __name__ == "__main__":
     accuracy = Model_Trainer.bagOfWords_Singlish(data_preprocessed)
     #print(accuracy)
 
-    accuracy = Model_Trainer.randomForestClassifier(data_preprocessed)
+    #accuracy = Model_Trainer.randomForestClassifier(data_preprocessed)
+    accuracy= Model_Trainer.bagOfWords_Singlish(data_preprocessed)
     print(accuracy)
