@@ -8,17 +8,6 @@ from src.logger import logging
 from bs4 import BeautifulSoup
 class Preprocessing():
 
-    def DataSetModifying(self,data_input):
-        try:
-            #print(data_input.head())
-            logging.info("data set modifying initiated")
-            #print(data_input['Language'].value_counts())
-            data_input['Language_N'] = data_input['Language'].apply(lambda x: '1' if x == 'Italian'           else '0')
-            #print(data_input['Language_N'].value_counts())
-            data_input.drop(columns =['Language'])
-            print(data_input.head(5))
-        except:
-            pass
 
 
     punctuation = ["\'", "$", "-", "+", "#", ">", "{", "}", "_", "*", "`", "\\", ":", ";", "!", ",", ".", "...", "..",
@@ -78,3 +67,16 @@ class Preprocessing():
         except Exception as e :
             raise CustomException(e, sys)
 
+
+    def DataSetModifying(self,data_input):
+        try:
+            #print(data_input.head())
+            logging.info("data set modifying initiated")
+            #print(data_input['Language'].value_counts())
+            data_input['Language'] = data_input['Language'].apply(lambda x: '1' if x == 'Italian' else '0')
+            #print(data_input['Language_N'].value_counts())
+            #data_input.drop(columns =['Language'])
+            #print(data_input.head(5))
+            return data_input
+        except:
+            pass
